@@ -1,0 +1,50 @@
+<div class="page-content page-game">
+	<article class="game-article">
+		{{partial 'game-article'}}
+
+		<div class="meta">
+			{{#popup-bottom isShown=isRatingPopupShown class="popup-rating"}}
+				<div class="current"><i class="icon-star"></i> {{_rating}}</div>
+
+				<button class="btn-text btn-cancel" {{action 'togglePopup' 'rating' false}}>Cancel</button>
+
+				<button class="btn-text btn-save" {{action 'saveRating'}}>Save</button>
+
+				<div class="slider-wrap">
+					{{simple-slider value=_rating}}
+				</div><!--/.slider-wrap-->
+			{{/popup-bottom}}
+
+			{{#popup-bottom isShown=isMorePopupShown class="popup-more"}}
+				<div class="popup-more-delete">
+					<button class="btn-text btn-red" {{action 'removeGame'}}>Remove from library</button>
+				</div><!--/.popup-more-delete-->
+
+				{{!--
+				<div class="popup-more-sharing">
+					<button><i class="icon-facebook" {{action 'share' 'facebook'}}></i></button>
+					<button><i class="icon-twitter" {{action 'share' 'twitter'}}></i></button>
+				</div><!--/.popup-more-sharing-->
+				--}}
+
+				<button class="btn-text btn-cancel" {{action 'togglePopup' 'more' false}}>Cancel</button>
+			{{/popup-bottom}}
+
+			{{#popup-bottom isShown=isHoursPopupShown class="popup-hours"}}
+				<button class="btn-text btn-cancel" {{action 'togglePopup' 'hours' false}}>Cancel</button>
+
+				<button class="btn-text btn-save" {{action 'saveHours'}}>Save</button>
+
+				<div class="input-wrap">
+					{{input type="number" id="input-hours" value=_hours}}
+				</div><!--/.input-wrap-->
+			{{/popup-bottom}}
+
+			<ul>
+				<li><button {{action 'togglePopup' 'rating' true}}><i class="icon-star"></i> {{rating}}</button></li>
+				<li><button {{action 'togglePopup' 'more' true}}><i class="icon-ellipsis"></i></button></li>
+				<li><button {{action 'togglePopup' 'hours' true}}><i class="icon-clock"></i> {{format-hours hours}}</button></li>
+			</ul>
+		</div><!--/.meta-->
+	</article>
+</div><!--/.page-game-->

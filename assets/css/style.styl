@@ -1,0 +1,549 @@
+@import "nib"
+@import "normalize"
+@import "icons"
+
+DARK_BLUE = #1ab2ff
+BLUE = #33bbff
+LIGHT_BLUE = #4dc3ff
+RED = #D13
+
+@import "common"
+
+html
+body
+body > .ember-view
+	height 100%
+
+html
+	font-size 14px; font-family "Helvetica Neue", "Helvetica", sans-serif
+	cursor default
+
+body
+	background #FFF
+	color #000
+	-webkit-touch-callout none
+	-webkit-user-select none
+	-webkit-font-smoothing antialiased
+
+.page
+	position relative
+	width 320px; min-height 100%
+	margin 0 auto
+	overflow hidden
+	box-shadow 0 0 10px #CCC
+
+.page-content
+	position absolute
+	box-sizing border-box
+	top 64px; right 0; bottom 0; left 0
+	overflow-y auto
+	-webkit-overflow-scrolling touch
+
+/* THUMBS
+---------------------------------------- */
+.page-thumbs
+	.placeholder
+		.btn-new
+			top -8px; left -10px
+			size 44px
+			line-height 50px
+
+.thumbs
+	overflow hidden
+
+.thumbs-article
+	float left
+	size 96px 120px
+	margin 8px 0 0 8px
+	text-align center
+
+	a
+		text-decoration none
+
+	.img
+		height 96px
+		margin-bottom 4px
+		border-radius 2px
+		box-shadow 0 0 1px rgba(#000, 0.5)
+		overflow hidden
+
+	img
+		display block
+		max-width 100%; height auto
+
+	h1
+		margin 0
+		overflow hidden
+		white-space nowrap
+		text-overflow ellipsis
+		font-weight 400; font-size 12px
+		color #333
+
+/* GAME
+---------------------------------------- */
+.page-game
+	overflow hidden
+
+	.boxart
+	.boxart-fake
+		bottom 44px
+
+	.meta
+		absolute bottom left 50%; z-index 99
+		size 320px 44px
+		margin-left -160px
+		background DARK_BLUE
+		box-shadow inset 0 1px 0 rgba(#FFF, 0.3)
+		font-size 20px; line-height 1
+		color #333
+		perspective 900
+
+		ul
+			@extend .list-clean
+			display table
+			width 100%
+
+		li
+			display table-cell
+			width 33%
+			text-align center
+			vertical-align top
+
+			button
+				display block
+				size 100% 44px
+				border none
+				background none
+				box-shadow inset 1px 0 rgba(#000, 0.1)
+				text-decoration none
+				color #FFF
+
+				[class*="icon-"]
+					vertical-align -2px
+
+				.gt
+					position relative
+					top -2px
+					margin-right 3px
+					font-size 18px
+
+				&:hover
+				&:focus
+					background rgba(#FFF, 0.1)
+
+			&:first-child button
+				box-shadow none
+
+.popup-rating
+.popup-hours
+	input[type="number"]
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
+			-webkit-appearance none
+			margin 0
+
+	.btn-cancel
+		float left
+
+	.btn-save
+		float right
+
+.popup-rating
+	button
+		margin-top 22px
+
+	.current
+		padding-top 15px
+		font-weight 300; font-size 24px; line-height 1
+		text-align center
+
+	.slider-wrap
+		float left
+		size 187px 66px
+		padding-top 22px
+
+	.ikslider
+		position relative
+		height 33px
+		padding-top 11px
+
+	.ikslider-bar
+		height 2px
+		border-style solid
+		border-width 10px 187px 10px 0
+		border-color transparent #CCC transparent transparent
+
+	.ikslider-seeker
+		absolute top left
+		size 22px 42px
+		background rgba(#FFF, 0.9)
+		border 1px solid #BBB
+
+.popup-hours
+	button
+		margin-top 22px
+
+	.input-wrap
+		padding 22px 20px
+		overflow hidden
+
+		input
+			box-sizing border-box
+			size 100% 42px
+			padding 0
+			border none
+			border-bottom 2px solid #333
+			background none
+			border-radius 0
+			font-size 24px; line-height 1
+			text-align center
+
+			&:focus
+				outline none
+				border-bottom-color #AAA
+
+.popup-more
+	button
+		width 100%
+
+.popup-more-sharing
+	padding 10px 0
+	border solid rgba(#000, 0.1)
+	border-width 1px 0
+	text-align center
+
+	button
+		size 44px
+		margin 0; padding 0
+		border none
+		background none
+		font-size 40px; line-height 34px
+
+/* NEWGAME
+---------------------------------------- */
+@keyframes pulse
+	50%
+		color DARK_BLUE
+
+	100%
+		color #8e8e93
+
+.search
+	absolute top left; z-index 89
+	box-sizing border-box
+	width 100%
+	padding 28px 8px 8px
+	background DARK_BLUE
+	box-shadow inset 0 -1px 0 rgba(#000, 0.1)
+	overflow hidden
+
+	.btn-cancel
+		float right
+		height 28px
+		margin-right -8px
+		font-size 16px; line-height 28px
+		padding-left 10px
+		color #FFF
+
+	.input-wrap
+		position relative
+		overflow hidden
+
+	.label
+		absolute top left
+		color #8e8e93
+		cursor text
+		line-height 28px
+
+		i
+			float left
+			width 25px
+			margin-top 4px
+			font-size 20px
+			text-align center
+
+	&.looking .label i
+		animation pulse 0.8s infinite
+
+	input[type="search"]
+		position relative
+		box-sizing border-box
+		size 100% 28px
+		padding 0 10px 0 25px
+		border none
+		border-radius 5px
+		background #FFF
+		-webkit-appearance none
+		color #333
+
+		&:focus
+			outline none
+
+.results
+	@extend .list-default
+
+	a
+		height auto
+		padding-top 0; padding-bottom 0
+
+		&:hover
+		&:focus
+			.platform span
+				background #e6e6e6
+
+	.table
+		height 42px
+
+	.table-cell
+		vertical-align middle
+
+	.platform
+		width 1%
+
+		span
+			display block
+			width 44px
+			padding 0 3px
+			overflow hidden
+			border-radius 2px
+			background #f2f2f2
+			font-weight 600; font-size 11px; line-height 20px
+			text-align center
+			text-transform uppercase
+			white-space nowrap
+			text-overflow ellipsis
+			color #555
+
+	.date
+		width 1%
+		padding-top 2px
+		font-size 12px; line-height 22px
+		color #666
+
+	.title
+		padding 5px 10px
+		line-height 22px
+
+.page-newgame
+	overflow hidden
+
+/* SIGN IN
+---------------------------------------- */
+.page-signin
+	padding-top 40px
+	text-align center
+
+	h1
+		margin 0
+		font-weight 300
+
+	p
+		margin 10px 0 15px
+		font-size 14px
+		color #999
+
+	button
+		padding 0
+		border none
+		background none
+
+		[class*="icon-"]
+			font-size 40px
+
+/* SETTINGS
+---------------------------------------- */
+.page-settings
+	ul
+		@extend .list-default
+
+		li
+			margin-left 59px
+
+		button
+		a
+			display block
+			box-sizing content-box
+			position relative
+			margin-left -60px; padding-right 0; padding-left 60px
+
+			.ico
+				absolute top 8px left 16px
+				size 28px
+				line-height 28px
+				border-radius 5px
+				background #1ab2ff
+				text-align center
+				color #FFF
+
+			&.btn-red .ico
+				background RED
+				text-indent 2px
+
+/* LOADER
+---------------------------------------- */
+@keyframes loader1
+	8.33%
+		transform translate(20px, 0)
+	25%
+		transform translate(20px, 0)
+
+	33.33%
+		transform translate(20px, 20px)
+	50%
+		transform translate(20px, 20px)
+
+	58.33%
+		transform translate(0, 20px)
+	75%
+		transform translate(0, 20px)
+
+	83.33%
+		transform translate(0, 0)
+	100%
+		transform translate(0, 0)
+
+@keyframes loader2
+	8.33%
+		transform translate(0, 20px)
+	25%
+		transform translate(0, 20px)
+
+	33.33%
+		transform translate(0, 0)
+	50%
+		transform translate(0, 0)
+
+	58.33%
+		transform translate(20px, 0)
+	75%
+		transform translate(20px, 0)
+
+	83.33%
+		transform translate(20px, 20px)
+	100%
+		transform translate(20px, 20px)
+
+@keyframes loader3
+	8.33%
+		transform translate(0, 0)
+	25%
+		transform translate(0, 0)
+
+	33.33%
+		transform translate(20px, 0)
+	50%
+		transform translate(20px, 0)
+
+	58.33%
+		transform translate(20px, 20px)
+	75%
+		transform translate(20px, 20px)
+
+	83.33%
+		transform translate(0, 20px)
+	100%
+		transform translate(0, 20px)
+
+#loader-overlay
+	fixed top left; z-index 999
+	size 100%
+	background rgba(#FFF, 0)
+
+#loader
+	fixed top 50% left 50%; z-index 1000
+	size 40px
+	margin -20px 0 0 -20px
+
+	i
+		absolute top left
+		size 20px
+		background #33bbff
+		animation loader1 6s linear infinite
+
+		+ i
+			background #4dc3ff
+			transform translate(20px, 20px)
+			animation loader2 6s 1s linear infinite
+
+			+ i
+				background #1ab2ff
+				transform translate(0, 20px)
+				animation loader3 6s 0.5s linear infinite
+
+/* ERROR
+---------------------------------------- */
+.popup-message
+	fixed top 50% left; z-index 100
+	box-sizing border-box
+	width 100%
+	padding 20px 10px
+	font-weight 300; font-size 18px; line-height 24px
+	text-align center
+	background rgba(LIGHT_BLUE, 0.95)
+	opacity 0
+	color #FFF
+	transition 0.2s all
+	transform translate(0, -50px)
+
+	&.error
+		background rgba(RED, 0.95)
+
+	&.show
+		opacity 1
+		transform translate(0, 0)
+
+	&.hide
+		opacity 0
+		transform translate(0, 50px)
+
+/* NOT STANDALONE
+---------------------------------------- */
+.not_standalone
+	display none
+	position relative
+	height 100%
+	background linear-gradient(#33bbff, #4dc3ff)
+	font-weight 300; font-size 24px; line-height 40px
+	text-align center
+	color #FFF
+
+	&.shown
+		display block
+
+	&.desktop
+		min-height 450px
+
+	.logo
+		absolute top 50% left 50%
+		size 128px
+		margin -120px 0 0 -68px
+		border 4px solid #FFF
+		border-radius 27px
+		background-image url('/img/logo-blue.png');
+		background-size contain
+
+	&.desktop .logo
+		margin-top -140px
+
+	p
+		position absolute; left 50%
+		width 240px
+		margin 0 0 0 -120px
+
+	&.mobile p
+		bottom 50px
+
+	&.desktop p
+		top 50%
+		margin-top 40px
+
+		a
+			color #FFF
+
+		+ p
+			top auto; bottom 0
+			font-size 12px
+
+	.icon-arrow-down2
+		absolute bottom 20px left 50%
+		margin-left -10px

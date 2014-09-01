@@ -1,0 +1,16 @@
+<div {{bind-attr class=":search isActive:active isLooking:looking hasValue"}}>
+	<button class="btn-text btn-cancel" {{action "cancel"}}>Cancel</button>
+	<div class="input-wrap">
+		{{input id="search" type="search" value=keywords action="lookup" focus-in="activate"}}
+		<label for="search" class="label">
+			<i class="icon-search"></i>
+			{{#unless hasValue}}
+				{{#if label}}
+				{{label}}
+				{{else}}
+				Search
+				{{/if}}
+			{{/unless}}
+		</label>
+	</div><!--/.input-wrap-->
+</div><!--/.search-->

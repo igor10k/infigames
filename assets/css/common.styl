@@ -1,0 +1,281 @@
+/* EXTENDABLES
+---------------------------------------- */
+.pull-left
+	float left
+
+.pull-right
+	float right
+
+.list-clean
+	margin 0; padding 0
+	list-style none
+
+.list-default
+	@extend .list-clean
+	margin 20px 0
+	border solid #DDD
+	border-width 1px 0
+
+	li
+		border-top 1px solid #DDD
+		font-size 17px
+
+		&:first-of-type
+			border-top none
+
+	a
+	button
+		display block
+		position relative
+		box-sizing border-box
+		size 100% 18px
+		padding 13px 28px 13px 12px
+		border none
+		background none
+		line-height 18px
+		text-align left
+		text-decoration none
+		color #333
+
+		&:hover
+			background #f6f6f6
+
+		.icon-arrow-right3
+			absolute right 5px top 50%
+			margin-top -10px
+			color #888
+
+/* HELPERS
+---------------------------------------- */
+.table
+	display table
+	width 100%
+
+.table-cell
+	display table-cell
+	vertical-align top
+
+.hidden
+	display none
+
+[class*="icon-"]
+	font-size 20px
+
+.placeholder
+	padding 40px 30px
+	font-weight 300; font-size 18px; line-height 28px
+	text-align center
+
+	p
+		margin 0
+
+	.btn-wrap
+		position relative
+		display inline-block
+		width 22px
+
+		&:before
+			content "\00a0"
+
+		.btn-text
+			position absolute
+
+/* BUTTONS & LINKS
+---------------------------------------- */
+a
+	color BLUE
+
+	&:hover
+	&:focus
+		color darken(BLUE, 20%)
+
+.btn-text
+	height 44px
+	padding 0 8px
+	border none
+	background none
+	font-size 17px; line-height 1
+	text-decoration none
+	color BLUE
+
+	a&
+		line-height 44px
+
+	&:hover
+	&:focus
+		color darken(BLUE, 20%)
+
+.btn-ico
+	@extend .btn-text
+	width 44px
+	padding 0
+	font-size 20px
+	text-align center
+
+	a&
+		line-height 48px
+
+.btn-red
+	color RED
+
+	&:hover
+	&:focus
+		color darken(RED, 20%)
+
+/* HEADER
+---------------------------------------- */
+/* HEADER
+---------------------------------------- */
+.header
+	absolute top left 0; z-index 99
+	size 100% 44px
+	padding-top 20px
+	background BLUE
+	box-shadow inset 0 -1px 0 rgba(#000, 0.1)
+	color #FFF
+
+	.pull-left
+	.pull-right
+		position absolute
+		top 20px
+
+	.pull-left
+		left 0
+
+	.pull-right
+		right 0
+
+	&.animated
+		position absolute
+
+	h1
+		width 100px
+		margin 0 auto
+		overflow hidden
+		font-weight 500; font-size 17px; line-height 44px
+		text-align center
+		text-overflow ellipsis
+		white-space nowrap
+
+	button
+	a
+		color #FFF
+
+		&:hover
+			color #FFF
+
+	.icon-arrow-left
+		margin-right -2px
+		vertical-align -3px
+
+/* GAME
+---------------------------------------- */
+.game-article
+	.boxart-fake
+		background lighten(BLUE, 90%)
+		text-align center
+
+	h1
+		absolute top 50% left
+		width 100%
+		margin 0
+		text-align center
+		font-weight 600; font-size 28px
+		transform translate(0, -50%)
+		color #333
+
+	h2
+		absolute top 8px right 8px; z-index 1
+		margin 0; padding 0 10px 0
+		font-size 20px; line-height 30px
+		border-radius 2px
+		background rgba(#FFF, 0.8)
+		box-shadow 0 0 1px rgba(#000, 0.5)
+		font-weight 400
+		color #333
+
+	.boxart
+	.boxart-fake
+		position absolute
+		top 0; right 0; bottom 0; left 0
+
+		.img
+			absolute top left
+			size 100%
+			background-size contain
+			background-repeat no-repeat
+			background-position center center
+
+		.img-cover
+			background-size cover
+			-webkit-filter unquote('blur(8px) brightness(50%)')
+			transform scale(1.2)
+
+/* POPUP
+---------------------------------------- */
+.popup-bottom
+	absolute top 100% left 50%; z-index 99
+	width 320px
+	margin-bottom -400px; margin-left -160px
+	box-shadow 0 -1px 0 rgba(#000, 0.4)
+	background rgba(#FFF, 0.95)
+	transform translate(0, 1px)
+	transition transform 0.2s
+
+	&.shown
+		transform translate(0, -100%)
+
+	button
+		height 44px
+		padding 0 10px
+		font-size 17px; line-height 1
+
+/* ICONS
+---------------------------------------- */
+.icon-facebook
+	color #425E99
+
+.icon-twitter
+	color #59ADEB
+
+/* SLIDING VIEWS
+---------------------------------------- */
+.ember-view-slide
+	background #FFF
+	min-height 100%
+
+	&.slide-vertical
+		position absolute; z-index 100
+		size 100%
+		background #FFF
+		box-shadow 0 0 15px rgba(#000, 0.3)
+
+	&.animated
+		absolute top left
+		width 100%
+
+	&.transition-in
+		transition 0.2s transform
+
+	&.transition-out
+		transition 0.3s transform
+
+	&.slide-in
+	.going-back &.slide-out
+		transform translate(100%, 0)
+
+	&.slide-out
+	.going-back &.slide-in
+		transform translate(-100%, 0)
+
+	&.slide-vertical
+		&.slide-in
+		&.slide-out
+			transform translate(0, 100%)
+
+.ember-view-fade
+	&.transition
+		transition 0.2s opacity
+
+	&.fade-out
+		opacity 0

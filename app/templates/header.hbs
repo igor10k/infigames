@@ -1,0 +1,19 @@
+<header class="header">
+	{{#if parentRoute}}
+	{{#link-to parentRoute class="btn-text pull-left" goingBack=true animated=true}}<i class="icon-arrow-left"></i> Back{{/link-to}}
+	{{/if}}
+
+	{{#if isSettingsShown}}
+	{{#link-to 'settings.index' class="btn-ico pull-left" presentView=true animated=true}}<i class="icon-cog"></i>{{/link-to}}
+	{{/if}}
+
+	{{#if isAddShown}}
+	{{#link-to 'newgame.index' class="btn-ico pull-right" presentView=true animated=true}}<i class="icon-plus"></i>{{/link-to}}
+	{{/if}}
+
+	{{#if isSigninShown}}
+	{{#link-to 'signin' class="btn-text pull-right" animated=true}}Sign In{{/link-to}}
+	{{/if}}
+
+	<h1>Infigames</h1>
+</header><!--/.header-->

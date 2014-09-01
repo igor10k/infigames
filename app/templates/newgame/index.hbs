@@ -1,0 +1,30 @@
+{{search-form
+	action="lookup"
+	cancel="goBack"
+	label="Game Lookup"
+	isLooking=isSearchLooking
+	togglestate="toggleSearchState"
+	isFocused=isSearchFocused}}
+
+<div class="page-content page-newgame">
+	{{#if model}}
+	<ul class="results">
+	{{#each}}
+	<li>
+		{{#link-to 'newgame.show' id}}
+			<div class="table">
+				<div class="table-cell platform"><span>{{format-platform platform}}</span></div>
+				<div class="table-cell title">{{title}}</div>
+				<div class="table-cell date">{{format-date releaseDate 'y'}}</div>
+			</div>
+			<i class="icon-arrow-right3"></i>
+		{{/link-to}}
+	</li>
+	{{/each}}
+	</ul>
+	{{else}}
+	<div class="placeholder">
+		<p>Type a name of your game in the field above and press "return"</p>
+	</div><!--/.placeholder-->
+	{{/if}}
+</div><!--/.page-newgame-->

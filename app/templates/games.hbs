@@ -1,0 +1,28 @@
+<section class="page-content page-thumbs">
+	{{!--search-form togglestate="toggleSearchState"--}}
+
+	{{#if model}}
+	<div class="thumbs">
+		{{#each}}
+		{{#unless isNew}}
+		<article class="thumbs-article">
+			{{#link-to 'game' this}}
+			<div class="img">
+				<img {{bind-attr src="img"}} alt="">
+			</div><!--/.img-->
+			<h1>{{title}}</h1>
+			{{/link-to}}
+		</article>
+		{{/unless}}
+		{{/each}}
+	</div><!--/.thumbs-->
+	{{else}}
+	<div class="placeholder">
+		{{#if session.user}}
+		<p>Your game library is empty.<br> Add games using <span class="btn-wrap">{{#link-to 'newgame.index' class="btn-text btn-new"}}<i class="icon-plus"></i>{{/link-to}}</span></p>
+		{{else}}
+		<p>You can start making your own awesome game library<br> by {{#link-to 'signin'}}signing in{{/link-to}}</p>
+		{{/if}}
+	</div><!--/.placeholder-->
+	{{/if}}
+</section><!--/.page-thumbs-->

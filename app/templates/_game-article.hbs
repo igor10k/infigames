@@ -1,0 +1,7 @@
+<div {{bind-attr class=":boxart-fake img:hidden"}}>
+	<h1>{{title}}</h1>
+</div><!--/.boxart-fake-->
+<h2>{{platform}}</h2>
+{{#if img}}
+<div class="boxart"><div class="img img-cover" {{bind-attr style="bgImg"}}></div><div class="img" {{bind-attr style="bgImg"}}></div></div>
+{{/if}}

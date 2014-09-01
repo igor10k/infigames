@@ -1,0 +1,11 @@
+<header class="header">
+	{{#link-to 'newgame.index' class="btn-text pull-left" goingBack=true}}<i class="icon-arrow-left"></i> Back{{/link-to}}
+	<button class="btn-text pull-right" {{action 'save'}}>Save</button>
+	<h1>{{title}}</h1>
+</header>
+
+<div class="page-content page-newgame">
+	<article class="game-article">
+		{{partial 'game-article'}}
+	</article><!--/.game-->
+</div><!--/.page-newgame-->

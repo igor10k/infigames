@@ -1,0 +1,18 @@
+# Logs
+logs
+*.log
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Dependency directory
+node_modules
+
+# config
+.env
+
+# start script
+start.sh
+
+# public
+public

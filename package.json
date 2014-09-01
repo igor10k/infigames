@@ -1,0 +1,44 @@
+{
+  "name": "infigames",
+  "version": "0.2.0",
+  "description": "Game library",
+  "engines": {
+    "node": "0.11.13"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "games"
+  ],
+  "author": "igorkozlov.me",
+  "license": "",
+  "devDependencies": {
+    "koa-livereload": "*"
+  },
+  "dependencies": {
+    "co": "^3.0.6",
+    "co-monk": "^1.0.0",
+    "ember-template-compiler": "*",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-ember-templates": "*",
+    "handlebars": "^1.3.0",
+    "koa": "^0.8.1",
+    "koa-body": "^0.2.0",
+    "koa-generic-session": "^1.0.0",
+    "koa-hbs": "^0.4.5",
+    "koa-passport": "^0.5.0",
+    "koa-redis": "^0.1.1",
+    "koa-request": "^1.0.0",
+    "koa-router": "^3.2.1",
+    "koa-static": "^1.4.5",
+    "monk": "^0.9.0",
+    "passport-facebook": "^1.0.3",
+    "xml2js": "^0.4.4"
+  }
+}

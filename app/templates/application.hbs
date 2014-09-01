@@ -1,0 +1,9 @@
+<div {{bind-attr class=":page isGoingBack:going-back"}}>
+	{{render 'header'}}
+
+	{{outlet animationSequence="async"}}
+
+	{{render 'loader'}}
+
+	{{render 'message'}}
+</div><!--/.page-->
